@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Book body -->
+  <rect x="10" y="8" width="44" height="48" rx="4" fill="#2E6FD8"/>
+  <!-- Spine -->
+  <rect x="10" y="8" width="8" height="48" rx="3" fill="#1A4FA3"/>
+  <!-- Pages edge -->
+  <rect x="50" y="11" width="3" height="42" rx="1.5" fill="#F0F4FF"/>
+  <!-- Page lines -->
+  <line x1="24" y1="22" x2="48" y2="22" stroke="#8BB4F0" stroke-width="2" stroke-linecap="round"/>
+  <line x1="24" y1="30" x2="48" y2="30" stroke="#8BB4F0" stroke-width="2" stroke-linecap="round"/>
+  <line x1="24" y1="38" x2="48" y2="38" stroke="#8BB4F0" stroke-width="2" stroke-linecap="round"/>
+  <line x1="24" y1="46" x2="42" y2="46" stroke="#8BB4F0" stroke-width="2" stroke-linecap="round"/>
+  <!-- Price tag -->
+  <rect x="22" y="50" width="24" height="10" rx="3" fill="#F5A623"/>
+  <text x="34" y="58" text-anchor="middle" font-size="7" fill="#7A4800" font-weight="600" font-family="Arial, sans-serif">SELL</text>
+</svg>
