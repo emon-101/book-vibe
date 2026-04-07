@@ -13,7 +13,7 @@ const Books = () => {
       <div className="flex justify-center items-center my-10">
         <div className="dropdown dropdown-start">
           <div tabIndex={0} role="button" className="btn m-1 bg-green-500 text-white">
-            Sort By <IoIosArrowDown />
+            Sort By : {sortingType} <IoIosArrowDown />
           </div>
           <ul
             tabIndex="-1"
