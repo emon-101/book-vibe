@@ -4,7 +4,6 @@ import Book from './Book';
 const allBooksPromise = fetch('/booksData.json').then(res => res.json());
 const AllBooks = () => {
     const allBooks = use(allBooksPromise);
-    console.log("Books", allBooks);
     return (
         <div className='mt-12 lg:w-4/5 mx-auto px-4'>
             <h2 className='text-3xl font-bold text-zinc-600 mb-8 text-center'>Books</h2>

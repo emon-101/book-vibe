@@ -1,10 +1,11 @@
 import React from "react";
 import { FaRegStar } from 'react-icons/fa';
+import { Link } from "react-router";
 
 const Book = ({book}) => {
   return (
     <div>
-      <div className="border border-zinc-300 rounded-2xl p-6 flex flex-col gap-4 h-full justify-between cursor-pointer">
+      <Link to={`/bookDetails/${book.bookId}`} className="border border-zinc-300 rounded-2xl p-6 flex flex-col gap-4 h-full justify-between cursor-pointer">
         <figure>
           <div className="bg-base-300 rounded-2xl py-8">
             <img
@@ -25,7 +26,7 @@ const Book = ({book}) => {
         {/* Title */}
         <div className="py-4 border-b-2 border-zinc-300 border-dashed">
           <h2 className="text-2xl font-bold mb-2">{book.bookName}</h2>
-          <p className="text-zinc-500 font-medium">By: {book.publisher}</p>
+          <p className="text-zinc-500 font-medium">By: {book.author}</p>
         </div>
         {/* Ratings */}
         <div className="flex items-center justify-between font-medium">
@@ -37,7 +38,7 @@ const Book = ({book}) => {
             </span>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
