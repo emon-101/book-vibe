@@ -1,22 +1,20 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { BookContext } from '../../context/BookContext/BookProvider';
 import BookCard from './BookCard';
 
 const ReadList = ({sortingType}) => {
     const {storedBooks} = useContext(BookContext);
-    const [filteredReadList, setFilteredReadList] = useState(storedBooks);
-
-    useEffect(() => {
-        if(sortingType) {
-            if(sortingType === "pages") {
-                const sortedDataByPage = [...storedBooks].sort((a,b) => a.totalPages - b.totalPages);
-                console.log(sortedDataByPage);
-            } else if(sortingType === "ratings") {
-                const sortedDataByRatings = [...storedBooks].sort((a,b)=> a.rating - b.rating);
-                console.log(sortedDataByRatings);
-            }
+    const filteredReadList = useMemo(() => {
+        if (!sortingType) return storedBooks;
+        if (sortingType === "pages") {
+            const sortedDataByPage = [...storedBooks].sort((a, b) => a.totalPages - b.totalPages);
+            return sortedDataByPage;
+        } else if (sortingType === "ratings") {
+            const sortedDataByRatings = [...storedBooks].sort((a, b) => a.rating - b.rating);
+            return sortedDataByRatings;
         }
-    }, [sortingType, storedBooks])
+        return storedBooks;
+    }, [sortingType, storedBooks]);
 
     if(filteredReadList.length === 0) {
         return <div className='bg-base-300 rounded-2xl py-20'>
