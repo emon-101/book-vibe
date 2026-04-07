@@ -9,6 +9,11 @@ const BookProvider = ({ children }) => {
   const [wishList, setWishList] = useState([]);
 
   const handleMarkAsRead = (currentBook) => {
+    const isExistInWishList = wishList.find(book => book.bookId === currentBook.bookId);
+    if(isExistInWishList) {
+        toast.error(`${currentBook.bookName} is exist in wish list`);
+        return;
+    }
     const isExistBook = storedBooks.find(
       (book) => book.bookId === currentBook.bookId
     );

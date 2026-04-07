@@ -5,20 +5,6 @@ export default function ErrorPage() {
   const [dots, setDots] = useState("");
 
   useEffect(() => {
-    const tailwind = document.createElement("script");
-    tailwind.src = "https://cdn.tailwindcss.com";
-    document.head.appendChild(tailwind);
-
-    const daisyLink = document.createElement("link");
-    daisyLink.rel = "stylesheet";
-    daisyLink.href = "https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css";
-    document.head.appendChild(daisyLink);
-
-    const font = document.createElement("link");
-    font.rel = "stylesheet";
-    font.href = "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap";
-    document.head.appendChild(font);
-
     const glitchInterval = setInterval(() => {
       setGlitch(true);
       setTimeout(() => setGlitch(false), 180);

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { BookContext } from '../../context/BookContext/BookProvider';
 import BookCard from './BookCard';
 
-const WishList = () => {
+const WishList = ({sortingType}) => {
     const {wishList} = useContext(BookContext);
 
     if(wishList.length === 0) {
